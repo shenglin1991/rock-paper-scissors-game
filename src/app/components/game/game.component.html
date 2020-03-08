@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-6">
+          <h5>Hello {{user.name}}, click on icons to play</h5>
+        </div>
+        <div class="col-2">
+          <fa-icon [icon]="paper" size="4x" (click)="play(0)"></fa-icon>
+        </div>
+        <div class="col-2">
+          <fa-icon [icon]="rock" size="4x" (click)="play(1)"></fa-icon>
+        </div>
+        <div class="col-2">
+          <fa-icon [icon]="scissors" size="4x" (click)="play(2)"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12" style="text-align: center;">
+          <h1 *ngIf="result !== null && result === 1" style="color:green;">You win</h1>
+          <h1 *ngIf="result !== null && result === -1" style="color:red;">You lose</h1>
+          <h1 *ngIf="result !== null && result === 0 " style="color:yellow;">Fair match</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-2">
+            Your choice :
+          </div>
+          <div class="col-4" *ngIf="choice !== null">
+            <fa-icon [icon]="paper" size="10x" *ngIf="choice === 0"></fa-icon>
+            <fa-icon [icon]="rock" size="10x" *ngIf="choice === 1"></fa-icon>
+            <fa-icon [icon]="scissors" size="10x" *ngIf="choice === 2"></fa-icon>
+          </div>
+          <button type="button" class="btn btn-success">
+            Your score : {{user.score}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-2">
+            Computers choice :
+          </div>
+          <div class="col-4" *ngIf="computer !== null">
+            <fa-icon [icon]="paper" size="10x" *ngIf="computer === 0"></fa-icon>
+            <fa-icon [icon]="rock" size="10x" *ngIf="computer === 1"></fa-icon>
+            <fa-icon [icon]="scissors" size="10x" *ngIf="computer === 2"></fa-icon>
+          </div>
+          <button type="button" class="btn btn-danger">
+            Computer's score : {{computerScore}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
